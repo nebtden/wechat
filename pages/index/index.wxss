@@ -19,3 +19,13 @@
 .usermotto {
   margin-top: 200px;
 }
+
+page {
+  background-color: #fbf9fe;
+  height: 100%;
+}
+
+.page__hd{
+    padding: 50rpx 50rpx 100rpx 50rpx;
+    text-align: center;
+}

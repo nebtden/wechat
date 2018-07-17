@@ -7,8 +7,19 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+
+      lvcai_types: ['美国', '中国', '巴西', '日本'],
+      lvcai_index: 0,
+
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
   },
+    bindPickerChange: function(e) {
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            lvcai_index: e.detail.value
+        })
+    },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
