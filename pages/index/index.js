@@ -10,6 +10,8 @@ Page({
 
       lvcai_types: ['美国', '中国', '巴西', '日本'],
       lvcai_index: 0,
+      products:[],
+      product_index:'',
 
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
@@ -18,6 +20,30 @@ Page({
         console.log('picker发送选择改变，携带值为', e.detail.value)
         this.setData({
             lvcai_index: e.detail.value
+        })
+    },
+    typeChange:function (e) {
+        var _this = this;
+        console.log('picker发送选择改变，携带值为', e.detail.value)
+        wx.request({
+            url: 'http://test.lvcai.com/data.json', //仅为示例，并非真实的接口地址
+            data: {},
+            header: {
+                'content-type': 'application/json' // 默认值
+            },
+            success: function(res) {
+                console.log(res.data.x);
+                _this.setData({
+                    products: res.data.x,
+                    // hasUserInfo: true
+                })
+            }
+        })
+    },
+    ProductChange: function(e) {
+        console.log('product发送选择改变，携带值为', e.detail.value)
+        this.setData({
+            product_index: e.detail.value
         })
     },
   //事件处理函数
