@@ -1,6 +1,7 @@
 // pages/article/index.js
 
 const app = getApp();
+console.log(app);
 
 Page({
 
@@ -17,10 +18,13 @@ Page({
       var that = this
       console.log(that.data.articleList);
       console.log('that.data.articleList');
+      var data = [];
+      data['openId'] = app.globalData.openId;
       wx.request({
           url: app.globalData["api-url"]+'/api/article',
           // url: 'http://test.wechat-api.com/api/article',
           method:'get',
+          data:data,
           headers: {
               'Content-Type': 'application/json'
           },

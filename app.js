@@ -33,7 +33,9 @@ App({
                                     iv: msg.iv
                                 },
                                 success: data=>{
-
+                                    console.log('data');
+                                    console.log(data);
+                                    that.globalData.openId = data.data.openid;
                                     console.log(data);
                                 },
                                 fail: res=> {
@@ -72,6 +74,7 @@ App({
     },
     globalData: {
         userInfo: null,
+        openId: null,
         "api-url": "http://test.wechat-api.com",
     }
 })

@@ -4,11 +4,13 @@ Page({
     formSubmit: function (e) {
         var that = this;
         var formData = e.detail.value;
-        console.log('form发生了submit事件，携带数据为：', e.detail.value)
+        console.log('form发生了submit事件，携带数据为：', e.detail.value);
+        var data = formData;
+         data['openId'] = app.globalData.openId;
         wx.request({
             url: app.globalData["api-url"]+'/api/article',
             method:'post',
-            data: formData,
+            data: data,
             header: {
                 'Content-Type': 'application/json'
             },
