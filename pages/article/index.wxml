@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <text>列表页逻辑如下</text>
+
+  <view wx:for="{{articleList}}">
+    {{index}}: {{item.title}}
+  </view>
+</view>

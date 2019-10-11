@@ -10,7 +10,4 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <view class="test" hidden="{{hidden}}" bindtap="bindArticleTap">
-    <text>添加文章</text>
-  </view>
 </view>

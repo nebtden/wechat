@@ -1,7 +1,10 @@
 //app.js
 App({
+
+
     onLaunch: function () {
         // 展示本地存储能力
+        var that = this;
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
@@ -10,14 +13,17 @@ App({
         wx.login({
             success: res => {
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                console.log('res.code');
+                console.log(res.code);
                 if (res.code) {
                     //获取用户信息
                     wx.getUserInfo({
                         success: function (msg){
                             //发起网络请求
                             wx.request({
-                                url: 'https://test.com/onLogin.php',
-                                method: 'POST',
+                                // url: 'https://zhangsimon.space/code',
+                                url: that.globalData["api-url"]+'/code',
+                                method: 'GET',
                                 header: {
                                     'content-type': 'application/x-www-form-urlencoded'
                                 },
@@ -27,6 +33,7 @@ App({
                                     iv: msg.iv
                                 },
                                 success: data=>{
+
                                     console.log(data);
                                 },
                                 fail: res=> {
@@ -64,6 +71,7 @@ App({
         })
     },
     globalData: {
-        userInfo: null
+        userInfo: null,
+        "api-url": "http://test.wechat-api.com",
     }
 })
