@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/article/index",
-    "pages/article/add",
-    "pages/logs/logs"
+    "page/component/pages/index/index",
+    "page/component/pages/article/index",
+    "page/component/pages/article/add",
+    "page/component/pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,16 @@
+<!--pages/article/index.wxml-->
+
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+
+<!--index.wxml-->
+<view class="container">
+    <template is="head" data="{{title: 'form'}}"/>
+    <text>列表页逻辑如下</text>
+
+    <view wx:for="{{articleList}}">
+        {{index}}: {{item.title}}
+    </view>
+    <template is="foot"/>
+</view>
