@@ -76,5 +76,17 @@ App({
         userInfo: null,
         openId: null,
         "api-url": "http://test.wechat-api.com",
-    }
+    },
+    renderUrl(url, defaultUrl) {
+        if (!url || url=="") {
+            url = defaultUrl;
+        }
+        if (url.indexOf("__weui-popup")>0||url.startsWith("tel:")||url.startsWith("http://")||url.startsWith("https://")) {
+            return url;
+        }
+        if (url.indexOf("/pages/" + url) != 0) {
+            url = "/pages/" + url + "/index";
+        }
+        return url;
+    },
 })

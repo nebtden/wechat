@@ -12,5 +12,25 @@
     <view wx:for="{{articleList}}">
         {{index}}: {{item.title}}
     </view>
+
+    <view class="weui-grids appmsg2  weui-grids-border">
+        <block wx:for-items="{{msgs2}}">
+            <view bindtap="navigateTo" style="{{item.backgroundColor}}" data-field="msgs2" data-index="{{index}}" data-url="{{item.url}}" class="weui-media-box  weui-media-box_appmsg {{item.directionType}}  ">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <block wx:for="{{item.thumb_url}}" wx:for-item="img">
+                        <image class="weui-media-box__thumb" src="{{img}}" style="" />
+                    </block>
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title" style="{{item.color}}">
+                        <template is="wxParse" data="{{wxParseData:item.title.nodes}}" />
+                    </view>
+                    <view class="weui-media-box__desc" style="{{item.dcolor}}">
+                        <template is="wxParse" data="{{wxParseData:item.desc.nodes}}" />
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
     <template is="foot"/>
 </view>
