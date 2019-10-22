@@ -4,7 +4,8 @@
     "page/component/pages/article/index",
     "page/component/pages/article/add",
     "page/component/pages/logs/logs",
-    "page/component/pages/text/text"
+    "page/component/pages/text/text",
+    "page/component/pages/demo/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
