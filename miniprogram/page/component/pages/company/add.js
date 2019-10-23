@@ -1,18 +1,33 @@
 // pages/article/add.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      categories: ['生产厂家','销售企业','加工企业'],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      let that = this;
+      wx.request({
+          url: app.globalData["api-url"]+'/api/category',
+          method:'get',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          success: function(res) {
+              console.log(res.data);
+              that.setData({
+                  categories: res.data,
+              })
+          }
+      });
   },
 
   /**
@@ -62,5 +77,13 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  bindCategoryChange: function(e) {
+      console.log('picker account 发生选择改变，携带值为', e.detail.value);
+
+      this.setData({
+          categoryIndex: e.detail.value
+      })
+  },
+
 })

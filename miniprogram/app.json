@@ -6,7 +6,8 @@
     "page/component/pages/logs/logs",
     "page/component/pages/text/text",
     "page/component/pages/demo/list",
-    "page/component/pages/company/index"
+    "page/component/pages/company/index",
+    "page/component/pages/company/add"
   ],
   "window": {
     "backgroundTextStyle": "light",
