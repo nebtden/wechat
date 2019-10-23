@@ -1,0 +1,11 @@
+<!--pages/article/add.wxml-->
+
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+    <template is="head" data="{{title: 'form'}}"/>
+    <text>pages/article/add.wxml</text>
+    <template is="foot"/>
+</view>
+
