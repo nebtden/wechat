@@ -8,7 +8,8 @@
     "page/component/pages/demo/list",
     "page/component/pages/company/index",
     "page/component/pages/company/add",
-    "page/component/pages/company/show"
+    "page/component/pages/company/show",
+    "page/component/pages/info/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

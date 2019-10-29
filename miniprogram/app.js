@@ -73,6 +73,7 @@ App({
     globalData: {
         userInfo: null,
         openId: null,
-        "api-url": "http://test.wechat-api.com",
+        // "api-url": "http://test.wechat-api.com",
+        "api-url": "http://zhangsimon.space",
     },
 })
