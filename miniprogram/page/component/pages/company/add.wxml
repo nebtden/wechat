@@ -1,13 +1,13 @@
 <!--pages/article/add.wxml-->
 
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
-    <!--    <view class="page__hd">
-            <view class="page__title">Input</view>
-            <view class="page__desc">表单输入</view>
-        </view>-->
+
     <view class="page__bd">
+        <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
         <form catchsubmit="formSubmit" catchreset="formReset">
             <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+
+
 
             <view class="weui-cells__title">公司名</view>
             <view class="weui-cells weui-cells_after-title">
@@ -37,6 +37,19 @@
                         </picker>
                     </view>
                 </view>
+
+            </view>
+
+            <view class="weui-cells__title">公司位置</view>
+            <view class="weui-cells weui-cells_after-title">
+
+                <view class="weui-cell ">
+                    <view class="weui-cell__bd button-area">
+                        <input class="weui-input" name="location" disabled="true" placeholder="" value="{{locationAddress}}" />
+                        <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="chooseLocation">选择位置</button>
+                    </view>
+                </view>
+
 
             </view>
 

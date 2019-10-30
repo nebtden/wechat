@@ -1,1 +1,12 @@
 /* pages/article/add.wxss */
+
+.button-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    text-align:center;
+}
+
+.button-area button{
+    margin-top: 15px;
+
+}

@@ -7,18 +7,50 @@ Page({
      * 页面的初始数据
      */
     data: {
-
-        categories: ['生产厂家','销售企业','加工企业'],
+        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        categories: [],
         files: [],
         image: '',
+        locationAddress:'',
+        longitude:'',
+        latitude:'',
+        hasLocation:false,
     },
 
-
+    bindGetUserInfo (e) {
+        console.log('e.detail.userInfo')
+        console.log(e.detail.userInfo)
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         let that = this;
+        wx.getSetting({
+            success(res) {
+                if (!res.authSetting['scope.userLocation']) {
+                    wx.authorize({
+                        scope: 'scope.userLocation',
+                        success () {
+                            // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+                        }
+                    })
+                }
+            }
+        });
+
+        wx.getSetting({
+            success(res) {
+                if (res.authSetting['scope.userInfo']) {
+                    wx.getUserInfo({
+                        success: function(res) {
+                            console.log(res.userInfo)
+                        }
+                    })
+                }
+            }
+        });
+
         wx.request({
             url: app.globalData["api-url"]+'/api/category',
             method:'get',
@@ -120,6 +152,22 @@ Page({
             }
         })
     },
+
+    chooseLocation() {
+        const that = this
+        wx.chooseLocation({
+            success(res) {
+                console.log(res)
+                that.setData({
+                    hasLocation: true,
+                    longitude:res.longitude,
+                    latitude:res.latitude,
+                    locationAddress: res.address
+                })
+            }
+        })
+    },
+
     formSubmit(e) {
         console.log('form发生了submit事件，携带数据为：', e.detail.value);
 
@@ -128,6 +176,10 @@ Page({
         console.log('that.data.list');
         let data = e.detail.value;
         data.image = that.data.image;
+        data.longitude = that.data.longitude;
+        data.latitude = that.data.latitude;
+        data.open_id = app.globalData['openId'];
+        console.log();
         wx.request({
             url: app.globalData["api-url"]+'/api/company',
             method:'post',
@@ -136,17 +188,16 @@ Page({
                 'Content-Type': 'application/json'
             },
             success: function(res) {
-                console.log(res.data)
+                console.log('res.data.status')
+                console.log(res.data.status)
                 if(res.data.status==1){
                     wx.redirectTo({
-                        url: 'test?id=1'
+                        url: 'show?id='+res.data.data.id
                     })
                 }else{
                     //弹出错误警告
                 }
-                // that.setData({
-                //     list: res.data,
-                // })
+
             }
         });
     },

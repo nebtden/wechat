@@ -15,31 +15,25 @@ App({
                 console.log(res.code);
                 if (res.code) {
                     //获取用户信息
-                    wx.getUserInfo({
-                        success: function (msg){
-                            //发起网络请求
-                            wx.request({
-                                // url: 'https://zhangsimon.space/code',
-                                url: that.globalData["api-url"]+'/code',
-                                method: 'GET',
-                                header: {
-                                    'content-type': 'application/x-www-form-urlencoded'
-                                },
-                                data: {
-                                    code: res.code,
-                                    encryptedData: msg.encryptedData,
-                                    iv: msg.iv
-                                },
-                                success: data=>{
-                                    console.log('data');
-                                    console.log(data);
-                                    that.globalData.openId = data.data.openid;
-                                    console.log(data);
-                                },
-                                fail: res=> {
-                                    console.log(res)
-                                }
-                            })
+                    wx.request({
+                        // url: 'https://zhangsimon.space/code',
+                        url: that.globalData["api-url"]+'/code',
+                        method: 'GET',
+                        header: {
+                            'content-type': 'application/x-www-form-urlencoded'
+                        },
+                        data: {
+                            code: res.code,
+                        },
+                        success: data=>{
+                            console.log('data');
+                            console.log(data);
+                            that.globalData.openId = data.data.openid;
+                            console.log('data.data.openid');
+                            console.log(data.data.openid);
+                        },
+                        fail: res=> {
+                            console.log(res)
                         }
                     })
                 } else {
@@ -73,7 +67,7 @@ App({
     globalData: {
         userInfo: null,
         openId: null,
-        // "api-url": "http://test.wechat-api.com",
-        "api-url": "http://zhangsimon.space",
+         "api-url": "http://test.wechat-api.com",
+        //"api-url": "http://zhangsimon.space",
     },
 })

@@ -43,5 +43,10 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于显示您公司位置，请必须选择，否则无法发布！"
+    }
+  },
   "sitemapLocation": "sitemap.json"
 }
