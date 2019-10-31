@@ -53,57 +53,57 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "page/component/pages/article/index",
-					"pathName": "page/component/pages/article/index",
+					"name": "pages/article/index",
+					"pathName": "pages/article/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "page/component/pages/article/add",
-					"pathName": "page/component/pages/article/add",
+					"id": 1,
+					"name": "pages/article/add",
+					"pathName": "pages/article/add",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 2,
-					"name": "page/component/pages/text/text",
-					"pathName": "page/component/pages/text/text",
+					"name": "pages/text/text",
+					"pathName": "pages/text/text",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "page/component/pages/demo/list",
-					"pathName": "page/component/pages/demo/list",
+					"id": 3,
+					"name": "pages/demo/list",
+					"pathName": "pages/demo/list",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 4,
-					"name": "page/component/pages/company/index",
-					"pathName": "page/component/pages/company/index",
+					"name": "pages/company/index",
+					"pathName": "pages/company/index",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "page/component/pages/company/add",
-					"pathName": "page/component/pages/company/add",
+					"id": 5,
+					"name": "pages/company/add",
+					"pathName": "pages/company/add",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": 6,
-					"name": "page/component/pages/company/show",
-					"pathName": "page/component/pages/company/show",
+					"name": "pages/company/show",
+					"pathName": "pages/company/show",
 					"query": "id=1",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "page/component/pages/info/index",
-					"pathName": "page/component/pages/info/index",
+					"id": 7,
+					"name": "pages/info/index",
+					"pathName": "pages/info/index",
 					"query": "id=1",
 					"scene": null
 				}

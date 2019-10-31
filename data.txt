@@ -10,3 +10,21 @@ zhoubafu
 appid:wx1cf48ea95cb00b68
 APP_SECRET cac26a7f14c18aede23efc8e28f8bb48
 mail:nebtden@gmail.com
+
+
+个人中心，个人发布，个人信息
+生产企业
+制造企业
+加工企业
+贸易公司
+个体经营
+销售门市
+
+铝型材
+铝产品
+铝材加工
+五金配件
+原辅材料
+铝材机械设备
+铝材模具
+便民站铝材采购

@@ -1,0 +1,97 @@
+<!--pages/article/add.wxml-->
+
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+
+    <view class="page__bd">
+
+        <form catchsubmit="formSubmit" catchreset="formReset">
+            <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">错误提示</view>
+
+
+
+            <view class="weui-cells__title">公司名</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell ">
+                    <view class="weui-cell__bd">
+                        <input class="weui-input" name="name" placeholder="" />
+                    </view>
+                </view>
+            </view>
+
+            <view class="weui-cells__title">公司简介</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">
+                        <textarea class="weui-textarea" name="desc" placeholder="" style="height: 3.3em" />
+                        <view class="weui-textarea-counter">0/200</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="weui-cells__title">公司类型</view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_select">
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindCategoryChange" name="category_id" value="{{categoryIndex}}" range="{{categories}}">
+                            <view class="weui-select">{{categories[categoryIndex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+
+            </view>
+
+            <view class="weui-cells__title">公司位置</view>
+            <view class="weui-cells weui-cells_after-title">
+
+                <view class="weui-cell ">
+                    <view class="weui-cell__bd button-area">
+                        <input class="weui-input" name="location" disabled="true" placeholder="" value="{{locationAddress}}" />
+                        <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="chooseLocation">选择位置</button>
+                    </view>
+                </view>
+
+
+            </view>
+
+            <view class="weui-cells">
+                <view class="weui-cell">
+                    <view class="weui-cell__bd">
+                        <view class="weui-uploader">
+                            <view class="weui-uploader__bd">
+                                <view class="weui-uploader__files">
+                                    <block wx:for="{{files}}" wx:for-item="image">
+                                        <view class="weui-uploader__file">
+                                            <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                                        </view>
+                                    </block>
+                                </view>
+                                <view class="weui-uploader__input-box">
+                                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <checkbox-group bindchange="bindAgreeChange">
+                <label class="weui-agree" for="weuiAgree">
+                    <view class="weui-agree__text">
+                        <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                        <view class="weui-agree__checkbox-icon">
+                            <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                        </view>
+                        <!--阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>-->
+                    </view>
+                </label>
+            </checkbox-group>
+
+            <view class="weui-btn-area">
+                <!--<button type="primary" >Submit</button>-->
+                <button class="weui-btn" type="primary"   formType="submit">确定</button>
+            </view>
+        </form>
+    </view>
+</view>
+
+
