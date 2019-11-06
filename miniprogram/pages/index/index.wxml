@@ -6,7 +6,6 @@
       <view class="weui-flex__item" wx:for="{{categories}}">
         <navigator  url="/pages/company/index?category_id={{item.id}}" class="weui-media-box weui-media-box_appmsg"  open-type="redirect"   hover-class="weui-cell_active">
            <view class="placeholder">{{item.name}}</view>
-
         </navigator>
       </view>
     </view>

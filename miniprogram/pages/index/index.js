@@ -11,7 +11,7 @@ Page({
     onLoad: function () {
         let that = this
         wx.request({
-            url: app.globalData["api-url"]+'/api/category',
+            url: app.globalData["api-url"]+'/api/categories',
             method:'get',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,11 +1,11 @@
 /**index.wxss**/
 .placeholder{
-  margin: 5px;
-  padding: 0 1px;
-  text-align: center;
+  /*margin: 5px;*/
+  /*padding: 0 1px;*/
+  /*text-align: center;*/
   background-color: #F7F7F7;
-  height: 2.3em;
-  line-height: 2.3em;
+  /*height: 2.3em;*/
+  /*line-height: 2.3em;*/
   color: #1296db;
 }
 

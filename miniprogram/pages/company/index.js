@@ -7,11 +7,41 @@ Page({
     data:{
         'list':[ ],
         'page': 1,
+        'categories': [],
+        'provinces': [],
+        'category_show':false,
+        'province_show':false,
         hasMoreData: true,
     },
     onShow(){
 
     },
+    CategoryClick:function(e){
+        var data = e.currentTarget.dataset;
+        var index = data.index;
+        if(index=='province'){
+            this.setData({
+                category_show : false,
+                province_show : !this.data.province_show,
+            });
+        }
+        if(index=='category'){
+            this.setData({
+                province_show : false,
+                category_show : !this.data.category_show,
+            });
+        }
+
+
+
+
+    },
+
+    onCategoryItemClick:function(){
+
+    },
+
+
 
     onReachBottom: function () {
         if (this.data.hasMoreData) {
@@ -39,6 +69,34 @@ Page({
                 console.log(res.data)
                 that.setData({
                     list: res.data,
+                })
+            }
+        });
+
+        wx.request({
+            url: app.globalData["api-url"]+'/api/provinces',
+            method:'get',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function(res) {
+                console.log(res.data)
+                that.setData({
+                    provinces: res.data,
+                })
+            }
+        });
+
+        wx.request({
+            url: app.globalData["api-url"]+'/api/categories',
+            method:'get',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function(res) {
+                console.log(res.data)
+                that.setData({
+                    categories: res.data,
                 })
             }
         });

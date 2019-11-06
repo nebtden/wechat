@@ -1,1 +1,19 @@
 /* pages/article/index.wxss */
+
+.category_box{
+    flex-wrap:wrap;
+    white-space: nowrap;
+}
+
+
+.category{
+    text-align: center;
+}
+
+.category_item{
+    text-align: center;
+    background-color: #F7F7F7;
+    /*margin: 1px;*/
+    color: #1296db;
+    padding: 2px;
+}
