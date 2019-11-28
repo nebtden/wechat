@@ -42,7 +42,7 @@
         "pagePath": "pages/job/index",
         "iconPath": "image/icon_job.png",
         "selectedIconPath": "image/icon_job_HL.png",
-        "text": "求职"
+        "text": "招聘"
       },
       {
         "pagePath": "pages/article/index",

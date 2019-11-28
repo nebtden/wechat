@@ -16,7 +16,7 @@
 
 <view class='item'>
   <view class="title">
-    <navigator  url="/pages/me/company">
+    <navigator  url="/pages/company/index?open_id={{open_id}}">
       我的企业
     </navigator>
 
@@ -29,7 +29,7 @@
 
 <view class="item">
   <view class="title">
-    <navigator  url="/pages/me/product">
+    <navigator  url="/pages/product/index?open_id={{open_id}}">
     我的产品
     </navigator>
   </view>
@@ -41,7 +41,7 @@
 
 <view class="item">
   <view class="title">
-    <navigator  url="/pages/me/recruit">
+    <navigator  url="/pages/me/jobs">
     我的招聘
     </navigator>
   </view>
